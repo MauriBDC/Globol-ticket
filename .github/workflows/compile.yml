@@ -17,7 +17,7 @@ jobs:
           fetch-depth: '1' #1 is default and 0 fetches the full depth of the repo
       
       - name: build
-        run: dotnet build --no-restore
+        run: dotnet build
 
       - name: Teste
         run: dotnet test --no-build --verbosity normal
