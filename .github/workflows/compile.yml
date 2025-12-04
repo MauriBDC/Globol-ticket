@@ -6,11 +6,11 @@ on: # local onde será definido os gatilhos
       - main
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
+  build: #nome do job
+    runs-on: ubuntu-latest #onde será executado o trabalho
 
-    steps:
-      - name: Checkout
+    steps: # passos do trabalho
+      - name: Checkout # nome da etapa, aqui o repo do Git é clonado na maquina virtual.
         uses: actions/checkout@v3
         with:
           ref: 'main' #not naming the ref will fetch the default branch
@@ -26,3 +26,6 @@ jobs:
 
       - name: build
         run: dotnet build --no-restore
+
+      - name: Teste
+        run: dotnet test --no-build --verbosy normal
